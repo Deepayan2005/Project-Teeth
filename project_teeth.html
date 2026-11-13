@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Project Teeth — thoughtful, modern dental care for every smile.">
+  <title>Project Teeth | Modern Dental Care</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#173b3a;--deep:#103331;--teal:#b8e1d7;--mint:#eaf5f0;--cream:#f8f8f3;--muted:#71817d;--line:#dce8e2;--white:#fff}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:"DM Sans",sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
+h1,h2,h3,.brand{font-family:"Manrope",sans-serif}
+a{color:inherit;text-decoration:none}
+.site-header{height:88px;padding:0 7.2%;display:flex;align-items:center;justify-content:space-between;background:rgba(248,248,243,.94);position:sticky;top:0;z-index:20;border-bottom:1px solid rgba(220,232,226,.7);backdrop-filter:blur(14px)}
+.brand{display:flex;align-items:center;gap:10px;font-size:21px;font-weight:800;letter-spacing:-1px;line-height:1}
+.brand-mark{width:39px;height:39px;border-radius:13px;background:var(--ink);color:#c7eee0;display:grid;place-items:center;font-size:24px}
+.brand-light{font-weight:500;color:#6c9690}
+.brand small{display:block;font:600 8px "DM Sans",sans-serif;letter-spacing:2px;color:#81938d;margin-top:5px}
+.nav{display:flex;align-items:center;gap:34px;font-size:13px;font-weight:600;color:#526b65}
+.nav a:hover{color:#15917c}.nav .nav-cta{background:var(--ink);color:white;padding:13px 19px;border-radius:7px}.nav-cta span{margin-left:12px}
+.menu-toggle{display:none;background:none;border:0;font-size:25px;color:var(--ink)}
+.hero{padding:74px 7.2% 78px;display:grid;grid-template-columns:1fr 1fr;gap:6%;align-items:center;min-height:610px}
+.eyebrow{font-size:10px;letter-spacing:2.2px;font-weight:700;color:#68847c;display:flex;align-items:center;gap:10px;margin-bottom:22px}
+.eyebrow>span{width:25px;height:2px;background:#80b9a9;display:inline-block}
+.hero h1{font-size:clamp(46px,5.5vw,76px);line-height:1.08;letter-spacing:-4px;font-weight:700}
+h1 em,h2 em{font-style:normal;color:#73a99b}
+.hero-copy>p{color:#6b7c76;max-width:455px;font-size:15px;line-height:1.9;margin:24px 0 30px}
+.hero-actions{display:flex;align-items:center;gap:27px;flex-wrap:wrap}
+.button{padding:15px 20px;border-radius:6px;font-size:12px;font-weight:700;display:inline-flex;gap:22px;align-items:center;transition:.2s}
+.button-dark{background:var(--ink);color:white}.button-dark:hover{background:#28625b;transform:translateY(-2px)}
+.text-link{font-size:12px;font-weight:700}.text-link span{margin-left:8px;color:#78a99b}
+.hero-note{display:flex;gap:13px;align-items:center;margin-top:52px;color:#81908b;font-size:11px;line-height:1.6}
+.hero-note strong{color:var(--ink);font-size:12px}.note-icon{width:36px;height:36px;border:1px solid #c9ded5;border-radius:50%;display:grid;place-items:center;color:#77a999;font-size:18px}
+.hero-visual{height:460px;position:relative;padding:0 20px 20px 0}
+.hero-visual:before{content:"";position:absolute;inset:22px 0 0 22px;background:#c9e7dc;border-radius:48% 48% 10px 10px}
+.hero-visual>img{width:100%;height:100%;object-fit:cover;position:relative;border-radius:48% 48% 10px 10px;box-shadow:0 22px 55px #193c301a}
+.floating-card{position:absolute;bottom:48px;left:-48px;background:white;padding:15px 20px;border-radius:8px;box-shadow:0 12px 35px #163b3020;display:flex;gap:12px;align-items:center}
+.floating-icon{width:36px;height:36px;border-radius:50%;background:#e3f2eb;display:grid;place-items:center;color:#579481}
+.floating-card strong,.floating-card small{display:block}.floating-card strong{font:700 11px "Manrope"}.floating-card small{font-size:10px;color:#82918c;margin-top:3px}
+.hero-stamp{position:absolute;right:-18px;top:48px;background:#f4d7a9;width:92px;height:92px;border-radius:50%;display:grid;place-content:center;text-align:center;font-size:9px;letter-spacing:1px;font-weight:800;line-height:1.35;transform:rotate(10deg);box-shadow:0 5px 18px #00000012}
+.hero-stamp span{font-size:16px}
+.trust-strip{background:#eaf3ed;padding:27px 12%;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.trust-strip>div{display:flex;align-items:center;justify-content:center;gap:13px;border-right:1px solid #d4e3da}
+.trust-strip>div:last-child{border:0}.trust-strip strong{font:700 23px "Manrope";color:#81ac9d}.trust-strip span{font-size:11px;line-height:1.5;color:#637970}
+.section{padding:105px 7.2%}
+.section-heading{display:flex;align-items:end;justify-content:space-between;gap:35px;margin-bottom:35px}
+.section-heading h2,.doctor-copy h2,.contact-copy h2{font-size:clamp(36px,4vw,54px);line-height:1.12;letter-spacing:-2.5px}
+.section-heading>p{max-width:360px;color:#7a8983;font-size:13px;line-height:1.9;margin-bottom:5px}
+.notice{background:#fff7e8;border:1px solid #f1e4c9;padding:12px 16px;border-radius:6px;font-size:11px;color:#846b42;margin-bottom:23px}
+.notice span{margin-right:8px}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.service-card{background:white;border:1px solid #e8eee9;border-radius:9px;padding:25px 24px 19px;transition:.25s}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 15px 35px #173b3a0d}
+.service-card.featured{background:#edf6f0;border-color:#dbece1}
+.service-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+.service-icon{width:39px;height:39px;border-radius:12px;background:#eaf4ee;display:grid;place-items:center;color:#629987;font-size:20px}
+.featured .service-icon{background:#d7ebe0}
+.service-number{font-size:9px;letter-spacing:1.3px;color:#91a29b;font-weight:700}
+.service-card h3{font-size:19px;letter-spacing:-.5px;margin-bottom:8px}
+.service-card>p{font-size:12px;color:#7b8983;line-height:1.8;min-height:64px}
+.price{font:800 23px "Manrope";margin:18px 0 14px;color:#28584f}.price small{font:500 10px "DM Sans";color:#87958f}
+.instruction-toggle{border:0;border-top:1px solid #e6ede8;background:none;width:100%;padding:14px 0 0;text-align:left;display:flex;justify-content:space-between;color:#58776d;font:700 11px "DM Sans";cursor:pointer}
+.instruction-toggle span{font-size:17px;line-height:12px}
+.instructions{display:none;padding-top:13px}.instructions.open{display:block}
+.instructions p{font-size:11px;color:#72827b;line-height:1.7;margin-bottom:8px}.instructions b{color:#315e52}
+.fine-print{font-size:10px;color:#89958f;margin-top:20px;line-height:1.7}
+.doctor-section{padding:95px 11%;background:#eaf3ed;display:grid;grid-template-columns:.85fr 1fr;gap:10%;align-items:center}
+.doctor-image-wrap{height:480px;position:relative}
+.doctor-image-wrap img{width:100%;height:100%;object-fit:cover;object-position:center 25%;border-radius:48% 48% 9px 9px}
+.image-caption{position:absolute;bottom:20px;left:-28px;background:white;padding:14px 18px;border-radius:7px;box-shadow:0 8px 24px #183e3015;font-size:11px;font-weight:700}
+.image-caption span{color:#80ad9d;margin-right:8px}
+.doctor-copy h2{margin-bottom:27px}.doctor-copy h3{font-size:19px;margin-bottom:4px}.doctor-qualification{color:#689386;font-size:12px;font-weight:700}
+.doctor-description{font-size:13px;color:#708078;line-height:1.9;margin:19px 0 26px}
+.credentials{display:flex;gap:35px;border-top:1px solid #d2e2d8;padding-top:22px}
+.credentials div{display:flex;flex-direction:column}.credentials strong{font:800 21px "Manrope";color:#3c7465}.credentials span{font-size:10px;color:#7d8e85;line-height:1.5}
+.placeholder-note{font-size:10px;color:#9a8a68;margin-top:22px}
+.location-section{padding-bottom:110px}
+.location-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:35px}
+.map-placeholder{min-height:330px;border-radius:10px;position:relative;overflow:hidden;background-color:#dfece2;background-image:linear-gradient(35deg,transparent 47%,#c5d9cb 48%,#c5d9cb 50%,transparent 51%),linear-gradient(120deg,transparent 45%,#c5d9cb 46%,#c5d9cb 48%,transparent 49%),linear-gradient(0deg,transparent 48%,#c5d9cb 49%,#c5d9cb 51%,transparent 52%);background-size:130px 100px,170px 140px,100% 90px;display:grid;place-items:center}
+.map-placeholder:after{content:"";position:absolute;width:220px;height:220px;border:1px solid #a9c9b4;border-radius:50%;box-shadow:0 0 0 35px #b7d2bd55,0 0 0 70px #b7d2bd44}
+.map-pin{position:relative;z-index:1;background:var(--ink);color:white;width:55px;height:55px;border-radius:50% 50% 50% 5px;transform:rotate(-45deg);display:grid;place-items:center;font-size:25px;box-shadow:0 8px 20px #183b3040}
+.map-label{position:absolute;z-index:2;bottom:20px;left:20px;background:white;border-radius:7px;padding:12px 16px;display:flex;flex-direction:column;box-shadow:0 6px 20px #173b3a12}
+.map-label strong{font-size:12px}.map-label span{font-size:10px;color:#84918b}.map-caption{position:absolute;right:17px;top:17px;font-size:9px;letter-spacing:2px;color:#739184;font-weight:700}
+.location-info{display:flex;flex-direction:column;gap:30px;justify-content:center}
+.info-block{display:flex;gap:17px;padding-bottom:25px;border-bottom:1px solid #e0e9e3}
+.info-icon{width:42px;height:42px;flex:none;border-radius:12px;background:#e8f2eb;display:grid;place-items:center;font-size:19px;color:#6c9e8d}
+.info-block h3{font-size:16px;margin:1px 0 7px}.info-block p{font-size:12px;color:#778780;margin-bottom:9px}
+.info-block a{font-size:11px;color:#478875;font-weight:700}
+.hours-row{display:flex;justify-content:space-between;gap:20px;font-size:11px;color:#778780;margin:8px 0}
+.hours-row b{color:#3c5b50;font-weight:600}.info-block small{display:block;font-size:10px;color:#9a9582;margin-top:12px}
+.contact-section{background:var(--deep);color:white;padding:78px 10%;display:grid;grid-template-columns:1fr 1fr;gap:10%;align-items:center}
+.eyebrow-light{color:#a9c7b9}.eyebrow-light>span{background:#91c2ad}
+.contact-copy h2{font-size:clamp(39px,4.5vw,58px)}.contact-copy h2 em{color:#9fd2bd}
+.contact-copy>p{color:#b0c4ba;font-size:13px;margin-top:18px}
+.contact-details>a{display:flex;align-items:center;gap:16px;padding:17px 0;border-bottom:1px solid #ffffff24}
+.contact-details>a>span{width:39px;height:39px;border-radius:50%;background:#ffffff12;display:grid;place-items:center;color:#b6ddca}
+.contact-details small,.contact-details strong{display:block}.contact-details small{font-size:8px;letter-spacing:1.6px;color:#8eafa0}.contact-details strong{font-size:13px;font-weight:600;margin-top:3px}.contact-details>a>b{margin-left:auto;color:#9bcab5}
+.footer{padding:27px 7.2%;display:flex;align-items:center;justify-content:space-between;gap:20px;color:#85938c;font-size:10px}
+.footer-brand{color:var(--ink);font-size:18px}.footer-brand .brand-mark{width:34px;height:34px;font-size:20px}
+@media(max-width:900px){.site-header{padding:0 5%}.nav{gap:18px}.hero{padding-left:6%;padding-right:6%;gap:4%}.hero-visual{height:390px}.section{padding:80px 6%}.doctor-section{padding:75px 7%;gap:7%}.contact-section{padding:70px 7%}}
+@media(max-width:700px){.site-header{height:72px}.menu-toggle{display:block}.nav{display:none;position:absolute;top:71px;left:0;right:0;background:var(--cream);padding:18px 6% 24px;flex-direction:column;align-items:stretch;gap:0;border-bottom:1px solid var(--line);box-shadow:0 15px 20px #173b3a0c}.nav.open{display:flex}.nav a{padding:13px 0}.nav .nav-cta{padding:13px 16px;margin-top:7px}.hero{grid-template-columns:1fr;padding:55px 7% 70px;gap:55px}.hero h1{font-size:54px}.hero-visual{height:390px;margin:0 12px 0 18px}.floating-card{left:-18px;bottom:28px}.hero-stamp{right:-25px}.trust-strip{grid-template-columns:repeat(2,1fr);padding:25px 6%;gap:20px 5px}.trust-strip>div{justify-content:flex-start;border:0}.section{padding:75px 7%}.section-heading{display:block}.section-heading>p{margin-top:20px}.service-grid{grid-template-columns:1fr 1fr}.service-card{padding:20px 17px}.service-card h3{font-size:17px}.service-card>p{min-height:85px}.doctor-section{grid-template-columns:1fr;padding:70px 9%;gap:48px}.doctor-image-wrap{height:430px;margin:0 20px}.doctor-copy h2{font-size:46px}.location-grid{grid-template-columns:1fr}.map-placeholder{min-height:280px}.contact-section{grid-template-columns:1fr;gap:35px;padding:65px 8%}.footer{padding:25px 7%;flex-wrap:wrap}.footer>p{display:none}}
+@media(max-width:430px){.hero h1{font-size:47px;letter-spacing:-2.8px}.hero-visual{height:330px}.service-grid{grid-template-columns:1fr}.service-card>p{min-height:0}.section-heading h2{font-size:42px}.doctor-image-wrap{height:370px}.credentials{gap:22px}.hours-row{font-size:10px}}
+
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Project Teeth home">
+      <span class="brand-mark">✳</span>
+      <span>project<span class="brand-light">teeth</span><small>CARE FOR EVERY SMILE</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav class="nav" id="mainNav">
+      <a href="#home">Home</a><a href="#services">Services</a><a href="#doctor">Our Doctor</a>
+      <a href="#location">Location</a><a href="#contact" class="nav-cta">Contact us <span>↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span></span> YOUR SMILE, OUR PRIORITY</div>
+        <h1>A healthier smile<br>starts <em>right here.</em></h1>
+        <p>Thoughtful dental care, modern treatments, and a team that puts your comfort first. Because every smile deserves to shine.</p>
+        <div class="hero-actions">
+          <a class="button button-dark" href="#services">Explore our services <span>↗</span></a>
+          <a class="text-link" href="#doctor">Meet your dentist <span>→</span></a>
+        </div>
+        <div class="hero-note"><span class="note-icon">✦</span><span><strong>Care that feels different.</strong><br>Personal attention at every step.</span></div>
+      </div>
+      <div class="hero-visual">
+        <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1200&q=85" alt="Modern dental clinic treatment room">
+        <div class="floating-card"><span class="floating-icon">✦</span><div><strong>Smile with confidence</strong><small>Comfort-led dental care</small></div></div>
+        <div class="hero-stamp">YOUR<br>SMILE<br>MATTERS <span>✳</span></div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div><strong>01</strong><span>Patient-first<br>approach</span></div>
+      <div><strong>02</strong><span>Modern dental<br>care</span></div>
+      <div><strong>03</strong><span>Clear treatment<br>guidance</span></div>
+      <div><strong>04</strong><span>Care for every<br>smile</span></div>
+    </section>
+
+    <section class="section services-section" id="services">
+      <div class="section-heading">
+        <div><div class="eyebrow"><span></span> WHAT WE DO</div><h2>Care for every<br><em>kind of smile.</em></h2></div>
+        <p>From routine check-ups to advanced treatments, explore our services and find the right care for your smile.</p>
+      </div>
+      <div class="notice"><span>ⓘ</span> Prices and care instructions below are illustrative placeholders. Please confirm actual fees and clinical instructions with the clinic before publishing.</div>
+      <div class="service-grid">
+        <article class="service-card">
+          <div class="service-top"><span class="service-icon">✦</span><span class="service-number">01 / PREVENTIVE</span></div>
+          <h3>Dental Check-up</h3><p>A routine examination to assess your oral health and identify concerns early.</p>
+          <div class="price">₹500 <small>/ visit</small></div>
+          <button class="instruction-toggle" aria-expanded="false">Before & after care <span>＋</span></button>
+          <div class="instructions"><p><b>Before:</b> Brush gently and bring any previous dental reports or medication details.</p><p><b>After:</b> Follow the dentist's recommendations and schedule the next review if advised.</p></div>
+        </article>
+        <article class="service-card featured">
+          <div class="service-top"><span class="service-icon">◈</span><span class="service-number">02 / PREVENTIVE</span></div>
+          <h3>Teeth Cleaning</h3><p>Professional scaling to remove plaque and hardened deposits from teeth.</p>
+          <div class="price">₹1,200 <small>/ session</small></div>
+          <button class="instruction-toggle" aria-expanded="false">Before & after care <span>＋</span></button>
+          <div class="instructions"><p><b>Before:</b> Eat normally and let the dentist know about sensitivity or gum concerns.</p><p><b>After:</b> Brush gently, maintain daily flossing, and avoid very hot or cold foods if sensitive.</p></div>
+        </article>
+        <article class="service-card">
+          <div class="service-top"><span class="service-icon">✧</span><span class="service-number">03 / COSMETIC</span></div>
+          <h3>Teeth Whitening</h3><p>A cosmetic treatment designed to brighten the appearance of your smile.</p>
+          <div class="price">₹3,500 <small>/ session</small></div>
+          <button class="instruction-toggle" aria-expanded="false">Before & after care <span>＋</span></button>
+          <div class="instructions"><p><b>Before:</b> Get a dental assessment first; whitening may not suit every patient.</p><p><b>After:</b> Follow the dentist's advice and limit staining foods and drinks as instructed.</p></div>
+        </article>
+        <article class="service-card">
+          <div class="service-top"><span class="service-icon">⌁</span><span class="service-number">04 / RESTORATIVE</span></div>
+          <h3>Dental Filling</h3><p>Repairing a tooth affected by decay or minor damage to restore its function.</p>
+          <div class="price">₹1,000 <small>/ tooth</small></div>
+          <button class="instruction-toggle" aria-expanded="false">Before & after care <span>＋</span></button>
+          <div class="instructions"><p><b>Before:</b> Share allergies, medicines, and any pain or sensitivity with the dentist.</p><p><b>After:</b> Wait until numbness wears off before eating; contact the clinic if your bite feels uneven.</p></div>
+        </article>
+        <article class="service-card">
+          <div class="service-top"><span class="service-icon">◎</span><span class="service-number">05 / RESTORATIVE</span></div>
+          <h3>Root Canal</h3><p>Treatment to address infection or inflammation inside a tooth and help preserve it.</p>
+          <div class="price">₹4,500 <small>/ tooth*</small></div>
+          <button class="instruction-toggle" aria-expanded="false">Before & after care <span>＋</span></button>
+          <div class="instructions"><p><b>Before:</b> Share your symptoms and medical history; take medicines only as prescribed.</p><p><b>After:</b> Avoid chewing on the treated tooth until restored, and attend all follow-up visits.</p></div>
+        </article>
+        <article class="service-card">
+          <div class="service-top"><span class="service-icon">⌖</span><span class="service-number">06 / SURGICAL</span></div>
+          <h3>Tooth Extraction</h3><p>Careful removal of a tooth when it cannot be preserved or is causing problems.</p>
+          <div class="price">₹1,500 <small>/ tooth*</small></div>
+          <button class="instruction-toggle" aria-expanded="false">Before & after care <span>＋</span></button>
+          <div class="instructions"><p><b>Before:</b> Disclose all medicines and health conditions; follow eating instructions from the clinic.</p><p><b>After:</b> Follow the dentist's written instructions. Avoid smoking, straws, and vigorous rinsing initially.</p></div>
+        </article>
+      </div>
+      <p class="fine-print">*Starting prices shown for demonstration only. Final costs depend on examination, case complexity, materials, and treatment plan. These general notes do not replace personalised advice from a qualified dentist.</p>
+    </section>
+
+    <section class="doctor-section" id="doctor">
+      <div class="doctor-image-wrap">
+        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=85" alt="Portrait of a healthcare professional">
+        <div class="image-caption"><span>✳</span> A gentle approach. A brighter smile.</div>
+      </div>
+      <div class="doctor-copy">
+        <div class="eyebrow"><span></span> THE PERSON BEHIND YOUR CARE</div>
+        <h2>Meet your<br><em>smile partner.</em></h2>
+        <h3>Dr. [Doctor's Full Name]</h3>
+        <p class="doctor-qualification">BDS · [MDS / Specialisation, if applicable]</p>
+        <p class="doctor-description">At Project Teeth, we believe great dental care begins with listening. Our doctor takes time to understand each patient's needs, explain treatment options, and make every visit as comfortable as possible.</p>
+        <div class="credentials"><div><strong>[X]+</strong><span>Years of<br>experience</span></div><div><strong>Care</strong><span>Patient-first<br>approach</span></div><div><strong>Smile</strong><span>Focused on<br>your wellbeing</span></div></div>
+        <p class="placeholder-note">Replace the sample name, qualifications, experience, and photograph with the clinic's verified details.</p>
+      </div>
+    </section>
+
+    <section class="section location-section" id="location">
+      <div class="section-heading">
+        <div><div class="eyebrow"><span></span> COME SAY HELLO</div><h2>Find your way<br><em>to better care.</em></h2></div>
+        <p>We look forward to welcoming you. Check our clinic address and opening hours before your visit.</p>
+      </div>
+      <div class="location-grid">
+        <div class="map-placeholder"><div class="map-pin">⌖</div><div class="map-label"><strong>Project Teeth</strong><span>[Clinic address, City, PIN]</span></div><span class="map-caption">MAP LOCATION</span></div>
+        <div class="location-info">
+          <div class="info-block"><span class="info-icon">⌖</span><div><h3>Our clinic</h3><p>[Street / Area], [City], [State] – [PIN Code]</p><a href="https://maps.google.com/?q=Project+Teeth" target="_blank" rel="noopener">Get directions ↗</a></div></div>
+          <div class="info-block"><span class="info-icon">◷</span><div><h3>Working hours</h3><div class="hours-row"><span>Monday – Friday</span><b>9:00 AM – 7:00 PM</b></div><div class="hours-row"><span>Saturday</span><b>9:00 AM – 2:00 PM</b></div><div class="hours-row"><span>Sunday</span><b>Closed</b></div><small>Hours shown are sample timings. Please confirm before visiting.</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="contact-copy"><div class="eyebrow eyebrow-light"><span></span> WE'RE HERE TO HELP</div><h2>Let's take care<br>of that <em>smile.</em></h2><p>Have a question about a service? Get in touch with our clinic team.</p></div>
+      <div class="contact-details">
+        <a href="tel:+910000000000"><span>☎</span><div><small>CALL US</small><strong>+91 XXXXX XXXXX</strong></div><b>↗</b></a>
+        <a href="mailto:hello@projectteeth.example"><span>✉</span><div><small>EMAIL US</small><strong>hello@projectteeth.example</strong></div><b>↗</b></a>
+        <a href="https://wa.me/910000000000" target="_blank" rel="noopener"><span>◉</span><div><small>WHATSAPP</small><strong>Chat with our team</strong></div><b>↗</b></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><a class="brand footer-brand" href="#home"><span class="brand-mark">✳</span><span>project<span class="brand-light">teeth</span><small>CARE FOR EVERY SMILE</small></span></a><p>Small steps. Healthier smiles.</p><span>© <span id="year"></span> Project Teeth. All rights reserved.</span></footer>
+  <script>
+const menuToggle = document.getElementById("menuToggle");
+const mainNav = document.getElementById("mainNav");
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = mainNav.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.textContent = isOpen ? "×" : "☰";
+});
+
+mainNav.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    mainNav.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.textContent = "☰";
+  });
+});
+
+document.querySelectorAll(".instruction-toggle").forEach(button => {
+  button.addEventListener("click", () => {
+    const panel = button.nextElementSibling;
+    const isOpen = panel.classList.toggle("open");
+    button.setAttribute("aria-expanded", String(isOpen));
+    button.querySelector("span").textContent = isOpen ? "−" : "＋";
+  });
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+</script>
+</body>
+</html>
